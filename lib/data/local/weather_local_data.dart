@@ -1,9 +1,12 @@
-class WeatherUtil {
-  static String calculateKelvi(double kelvin) {
+import 'package:get/get.dart';
+import 'package:rxdart/subjects.dart';
+
+class WeatherLocalData {
+  static calculateKelvin(kelvin) {
     return (kelvin - 273.15).toStringAsFixed(0);
   }
 
-  static String getDescription(double temp) {
+  static String getDescription(temp) {
     if (temp > 25) {
       return 'Bugun issik eken';
     } else if (temp > 20) {
@@ -15,7 +18,7 @@ class WeatherUtil {
     }
   }
 
-  static String getWeatherIcon(double kelvin) {
+  static String getWeatherIcon(kelvin) {
     if (kelvin < 300) {
       return '🌨';
     } else if (kelvin < 400) {
